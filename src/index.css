@@ -1,0 +1,229 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --font-display: "Playfair Display", "Iowan Old Style", "Palatino Linotype",
+    Palatino, Georgia, serif;
+  --font-mono: "DM Mono", ui-monospace, "Cascadia Mono", "Segoe UI Mono",
+    monospace;
+
+  --color-ink: #292725;
+  --color-ink-muted: #6b6f68;
+  --color-ink-soft: #8a8c85;
+  --color-paper: #f8f7f4;
+  --color-paper-warm: #fffefa;
+  --color-line: #e9e7e1;
+  --color-lime: #c9d75e;
+  --color-lime-deep: #8dac66;
+  --color-lime-soft: #e8ecd4;
+  --color-forest: #253022;
+  --color-sidebar: #202322;
+
+  --color-hero-glow: rgba(201, 215, 94, 0.28);
+  --color-mock-header: #f3f3ed;
+  --color-mock-bg: #f0efe9;
+  --color-sidebar-item: #353936;
+  --color-sidebar-text-muted: #aeb2ad;
+}
+
+:root[data-theme="pink"] {
+  --color-ink: #3c2427;
+  --color-ink-muted: #7e5f62;
+  --color-ink-soft: #9d8083;
+  --color-paper: #faf4f4;
+  --color-paper-warm: #fff9f9;
+  --color-line: #f2e1e3;
+  --color-lime: #f09bb0;
+  --color-lime-deep: #c5657c;
+  --color-lime-soft: #fae3e7;
+  --color-forest: #3c1219;
+  --color-sidebar: #2e1b1e;
+
+  --color-hero-glow: rgba(240, 155, 176, 0.24);
+  --color-mock-header: #f5ecee;
+  --color-mock-bg: #f4eae9;
+  --color-sidebar-item: #452f32;
+  --color-sidebar-text-muted: #beafb1;
+}
+
+:root[data-theme="dark"] {
+  --color-ink: #e4e2dd;
+  --color-ink-muted: #9b9a93;
+  --color-ink-soft: #787771;
+  --color-paper: #141615;
+  --color-paper-warm: #1d1f1e;
+  --color-line: #2b2d2c;
+  --color-lime: #b8c54c;
+  --color-lime-deep: #819b5d;
+  --color-lime-soft: #2b301b;
+  --color-forest: #131610;
+  --color-sidebar: #0d0e0e;
+
+  --color-hero-glow: rgba(184, 197, 76, 0.12);
+  --color-mock-header: #181a19;
+  --color-mock-bg: #181a19;
+  --color-sidebar-item: #222524;
+  --color-sidebar-text-muted: #9b9d9b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body,
+header,
+section,
+footer,
+aside,
+div,
+button,
+a,
+svg,
+span,
+h1,
+h2,
+h3,
+p {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.011em;
+  font-feature-settings: "ss01" on, "cv11" on;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--color-lime-soft);
+  color: var(--color-forest);
+}
+
+/* Display / editorial headings */
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-feature-settings: "liga" on, "kern" on;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+/* UI sans refinements */
+.font-sans {
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+}
+
+/* Labels, meta, step numbers */
+.font-mono {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum" on, "ss01" on;
+  letter-spacing: 0.02em;
+}
+
+/* Section eyebrow labels */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  font-feature-settings: "tnum" on;
+}
+
+/* Lead body copy under heroes / sections */
+.lead {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  color: var(--color-ink-muted);
+  text-wrap: pretty;
+}
+
+/* Feature / step card body */
+.body-sm {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: -0.005em;
+  color: var(--color-ink-muted);
+  text-wrap: pretty;
+}
+
+/* Card & step titles */
+.title-sm {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  color: var(--color-ink);
+}
+
+/* Hero display size helpers */
+.display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(2.35rem, 4.5vw, 3.35rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-optical-sizing: auto;
+  text-wrap: balance;
+}
+
+.display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.display-md {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+/* Mock editor prose — literary feel */
+.prose-sample {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  line-height: 1.78;
+  letter-spacing: -0.01em;
+  font-feature-settings: "liga" on, "kern" on;
+}
