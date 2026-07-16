@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react'
 
 const VERSION = '0.0.4'
+const INSTALLER_NAME = 'Writerly.exe'
 const GITHUB_URL = 'https://github.com/Dacuvis/writerly'
 const RELEASES_URL = `${GITHUB_URL}/releases`
-const INSTALLER_NAME = `Writerly Setup ${VERSION}.exe`
-const INSTALLER_HREF = `${GITHUB_URL}/releases/latest/download/Writerly%20Setup%20${VERSION}.exe`
 
 function GitHubIcon() {
   return (
@@ -572,26 +571,6 @@ function App() {
         </div>
       </footer>
     </div>
-  )
-}
-
-function DownloadIcon() {
-  return (
-    <svg
-      width="18"
-      height="18"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden
-    >
-      <path d="M12 3v12" />
-      <path d="m7 10 5 5 5-5" />
-      <path d="M5 21h14" />
-    </svg>
   )
 }
 
